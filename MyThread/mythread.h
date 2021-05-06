@@ -11,6 +11,7 @@ public:
     MyThread();
     void run();
     QString name;
+    bool Stop;
 };
 
 #endif // MYTHREAD_H
