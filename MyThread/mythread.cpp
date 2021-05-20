@@ -9,7 +9,7 @@ MyThread::MyThread()
 
 void MyThread::run()
 {
-    for (int i = 0; i<1000; i++){
+    for (int i = 0; i<2; i++){
 
         // Declaration of mutex
         QMutex mutex;

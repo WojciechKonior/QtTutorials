@@ -2,6 +2,7 @@
 #define MYTHREAD_H
 
 #include <QThread>
+#include <QMutex>
 
 class MyThread : public QThread
 {
@@ -10,6 +11,7 @@ public:
     explicit MyThread(QObject *parent = 0);
     void run();
     bool Stop;
+    QMutex mutex;
 
 signals:
     void NumberChanged(int);
