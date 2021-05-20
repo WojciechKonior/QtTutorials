@@ -10,6 +10,7 @@ class MyThread: public QThread
 public:
     MyThread();
     void run();
+
     QString name;
     bool Stop;
 };

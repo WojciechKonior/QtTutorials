@@ -28,6 +28,6 @@ void MyThread::run()
         this->sleep(5);
 
         // Printing some stats
-        qDebug() << this-> name << " is running, result = " << i;
+        qDebug() << this->name << " is running, result = " << i;
     }
 }
