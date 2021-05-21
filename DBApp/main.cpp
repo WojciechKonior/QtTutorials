@@ -28,6 +28,16 @@ int main(int argc, char *argv[])
     if(db.open()){
         qDebug() << "Opened!";
 
+        QString sQuery = "INSERT INTO [test].[dbo].[People] ([FirstName],[LastName]) VALUES(:first,:last)";
+        QSqlQuery qry_;
+        qry_.prepare(sQuery);
+        qry_.bindValue(":first", "Wojciech");
+        qry_.bindValue(":last", "Konior");
+
+        if(qry_.exec()){
+            qDebug() << "Record Inserted";
+        }
+
         QSqlQuery qry;
 
         if(qry.exec("SELECT * FROM [test].[dbo].[People]")){
