@@ -15,6 +15,17 @@ int main(int argc, char *argv[])
 
     // Add database driver setup
     QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
+    QSqlDatabase db2 = QSqlDatabase::addDatabase("QODBC");
+
+    db2.setHostName(servername);
+    db2.setDatabaseName("mydsn64");
+
+    if(db2.open()){
+        qDebug() << "Opened";
+        db2.close();
+    } else {
+        qDebug() << db2.lastError().text();
+    }
 
     // Setup connections
     db.setConnectOptions();
